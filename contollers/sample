@@ -1,0 +1,38 @@
+ticket model
+
+id(PK)
+merchandId -> merchants(FK)
+ticketType 
+active 
+title
+decsription
+fileUrl -> 
+
+
+associations = > merchandId.belongsTo(model.merchants);
+
+create ticket=> POST api/v1/tickets => {
+    merchandId,
+    ticketType
+}
+
+get tickets => GET api/v1/tickets?soryBY='name'&sortOrder='ASC/DESC' => {
+    header
+}
+
+get ById=> GET api/v1/tickets/:ticketId => {
+    param => ticketId
+}
+
+update ById => PUT api/v1/tickets/:ticketId => {
+    param => ticketId,
+    body => {
+            merchandId,
+            ticketType
+    }
+}
+
+DELETE ById => DELETE api/v1/tickets/:ticketId => {
+    param => ticketId,
+}
+
